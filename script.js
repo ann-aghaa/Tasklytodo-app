@@ -20,21 +20,19 @@ let tasks = JSON.parse(localStorage.getItem(storageKey)) || [
     id: crypto.randomUUID(),
     title: "Sketch the first Taskly layout",
     priority: "hard",
-    completed: true
+    completed: true,
   },
   {
     id: crypto.randomUUID(),
     title: "Add filters and progress tracking",
     priority: "medium",
     completed: false,
-    createdAt: new Date().toISOString()
   },
   {
     id: crypto.randomUUID(),
     title: "Push the project to GitHub",
     priority: "low",
     completed: false,
-    createdAt: new Date().toISOString()
   }
 ];
 
@@ -82,7 +80,7 @@ function renderTasks() {
           <p>Add a new task or change your filters.</p>
         </div>
       </li>
-    `;
+    ;
     return;
   }
 
