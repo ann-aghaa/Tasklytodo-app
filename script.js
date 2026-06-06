@@ -20,7 +20,7 @@ let tasks = JSON.parse(localStorage.getItem(storageKey)) || [
   {
     id: crypto.randomUUID(),
     title: "Sketch the first Taskly layout",
-    priority: "hard",
+    priority: "high",
     completed: true,
     createdAt: new Date().toISOString()
   },
@@ -34,7 +34,7 @@ let tasks = JSON.parse(localStorage.getItem(storageKey)) || [
   {
     id: crypto.randomUUID(),
     title: "Push the project to GitHub",
-    priority: "easy",
+    priority: "low",
     completed: false,
     createdAt: new Date().toISOString()
   }
