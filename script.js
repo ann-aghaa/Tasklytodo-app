@@ -1,5 +1,55 @@
+const taskForm = document.querySelector("#taskForm");
+const taskInput = document.querySelector("#taskInput");
+const priorityInput = document.querySelector("#priorityInput");
+const searchInput = document.querySelector("#searchInput");
+const taskList = document.querySelector("#taskList");
+const taskTemplate = document.querySelector("#taskTemplate");
+const clearDoneButton = document.querySelector("#clearDoneButton");
+const navFilters = document.querySelectorAll(".nav-filter");
+const priorityFilters = document.querySelectorAll(".priority-filter");
+const progressPercent = document.querySelector("#progressPercent");
+const progressFill = document.querySelector("#progressFill");
+const totalCount = document.querySelector("#totalCount");
+const activeCount = document.querySelector("#activeCount");
+const doneCount = document.querySelector("#doneCount");
+const taskHint = document.querySelector("#taskHint");
+const storageKey = "taskly-tasks";
+
+let tasks = JSON.parse(localStorage.getItem(storageKey)) || [
+  {
+    id: crypto.randomUUID(),
+    title: "Sketch the first Taskly layout",
+    priority: "high",
+    completed: true,
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: crypto.randomUUID(),
+    title: "Add filters and progress tracking",
+    priority: "medium",
+    completed: false,
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: crypto.randomUUID(),
+    title: "Push the project to GitHub",
+    priority: "low",
+    completed: false,
+    createdAt: new Date().toISOString()
+  }
+];
+
+let statusFilter = "all";
+let priorityFilter = "all";
+let searchTerm = "";
+
+function saveTasks() {
+  localStorage.setItem(storageKey, JSON.stringify(tasks));
+}
+
 function formatDate(value) {
   return new Intl.DateTimeFormat("en", {
+    
     month: "short",
     day: "numeric",
     hour: "numeric",
