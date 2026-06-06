@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taskly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Taskly home">
+        <span class="brand-mark">T</span>
+        <span>Taskly</span>
+      </a>
+      <nav aria-label="Task views">
+        <button class="nav-filter active" type="button" data-filter="all">All</button>
+        <button class="nav-filter" type="button" data-filter="active">Active</button>
+        <button class="nav-filter" type="button" data-filter="completed">Done</button>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Feature-rich to-do website</p>
+        <h1>Plan your day without losing the plot.</h1>
+        <p>Taskly keeps priorities, progress, and focus filters in one clean local workspace.</p>
+      </div>
+
+      <section class="progress-panel" aria-label="Progress summary">
+        <div class="progress-top">
+          <span>Today</span>
+          <strong id="progressPercent">0%</strong>
+        </div>
+        <div class="progress-track" aria-hidden="true">
+          <div id="progressFill"></div>
+        </div>
+        <div class="stats-grid">
+          <div>
+            <strong id="totalCount">0</strong>
+            <span>Total</span>
+          </div>
+          <div>
+            <strong id="activeCount">0</strong>
+            <span>Active</span>
+          </div>
+          <div>
+            <strong id="doneCount">0</strong>
+            <span>Done</span>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="task-board" aria-label="Task manager">
+      <form id="taskForm" class="task-form">
+        <label for="taskInput">New task</label>
+        <div class="form-row">
+          <input id="taskInput" type="text" placeholder="Add a task, deadline, or tiny mission" autocomplete="off" required>
+          <select id="priorityInput" aria-label="Priority level">
+            <option value="high">High</option>
+            <option value="medium" selected>Medium</option>
+            <option value="low">Low</option>
+          </select>
+          <button type="submit">Add task</button>
+        </div>
+      </form>
+
+      <div class="toolbar">
+        <div class="search-wrap">
+          <label for="searchInput">Search</label>
+          <input id="searchInput" type="search" placeholder="Search tasks">
+        </div>
+        <div class="priority-tabs" aria-label="Priority filter">
+          <button class="priority-filter active" type="button" data-priority="all">All</button>
+          <button class="priority-filter" type="button" data-priority="high">High</button>
+          <button class="priority-filter" type="button" data-priority="medium">Medium</button>
+          <button class="priority-filter" type="button" data-priority="low">Low</button>
+        </div>
+      </div>
+
+      <ul id="taskList" class="task-list" aria-live="polite"></ul>
+
+      <div class="board-footer">
+        <p id="taskHint">Tasks save automatically in this browser.</p>
+        <button id="clearDoneButton" type="button">Clear completed</button>
+      </div>
+    </section>
+  </main>
+
+  <template id="taskTemplate">
+    <li class="task-item">
+      <button class="complete-button" type="button" aria-label="Toggle task"></button>
+      <div class="task-content">
+        <span class="task-title"></span>
+        <span class="task-date"></span>
+      </div>
+      <span class="priority-pill"></span>
+      <button class="delete-button" type="button" aria-label="Delete task">Delete</button>
+    </li>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
