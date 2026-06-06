@@ -281,7 +281,7 @@ p {
 }
 
 .priority-pill.high {
-  background: var(--high);
+  background: var(--hard);
 }
 
 .priority-pill.medium {
@@ -289,7 +289,7 @@ p {
 }
 
 .priority-pill.low {
-  background: var(--low);
+  background: var(--easy);
 }
 
 .delete-button {
