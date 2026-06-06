@@ -19,9 +19,8 @@ let tasks = JSON.parse(localStorage.getItem(storageKey)) || [
   {
     id: crypto.randomUUID(),
     title: "Sketch the first Taskly layout",
-    priority: "high",
-    completed: true,
-    createdAt: new Date().toISOString()
+    priority: "hard",
+    completed: true
   },
   {
     id: crypto.randomUUID(),
