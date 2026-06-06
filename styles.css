@@ -1,0 +1,169 @@
+.task-list {
+  min-height: 220px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.task-item {
+  gap: 12px;
+  min-height: 74px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: var(--panel-soft);
+}
+
+.task-item.completed {
+  opacity: 0.68;
+}
+
+.complete-button {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: var(--panel);
+}
+
+.task-item.completed .complete-button {
+  background: var(--accent);
+  box-shadow: inset 0 0 0 5px var(--panel);
+}
+
+.task-content {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: 5px;
+}
+
+.task-title {
+  font-weight: 900;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.task-item.completed .task-title {
+  text-decoration: line-through;
+}
+
+.task-date {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.priority-pill {
+  min-width: 78px;
+  min-height: 32px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.priority-pill.high {
+  background: var(--high);
+}
+
+.priority-pill.medium {
+  background: var(--medium);
+}
+
+.priority-pill.low {
+  background: var(--low);
+}
+
+.delete-button {
+  color: var(--ink);
+}
+
+.empty-state {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: var(--muted);
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  background: var(--panel-soft);
+  padding: 20px;
+}
+
+.board-footer {
+  margin-top: 16px;
+}
+
+.board-footer p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar {
+    display: grid;
+    align-items: stretch;
+  }
+
+  .search-wrap {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-shell {
+    width: min(100% - 20px, 1180px);
+    padding-top: 10px;
+  }
+
+  .topbar,
+  .form-row,
+  .board-footer {
+    display: grid;
+  }
+
+  nav,
+  .priority-tabs {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .priority-tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #priorityInput,
+  .task-form button[type="submit"] {
+    width: 100%;
+  }
+
+  .task-item {
+    grid-template-columns: 28px 1fr;
+    align-items: start;
+  }
+
+  .priority-pill,
+  .delete-button {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
