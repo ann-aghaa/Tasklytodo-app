@@ -25,7 +25,7 @@
 
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">Keep your Tasks Tamed</p>
+        <p class="eyebrow">Feature-rich to-do website</p>
         <h1>Plan your day without losing the plot.</h1>
         <p>Taskly keeps priorities, progress, and focus filters in one clean local workspace.</p>
       </div>
@@ -59,11 +59,11 @@
       <form id="taskForm" class="task-form">
         <label for="taskInput">New task</label>
         <div class="form-row">
-          <input id="taskInput" type="text" placeholder="Add a task, deadline or tiny mission" autocomplete="off" required>
+          <input id="taskInput" type="text" placeholder="Add a task, deadline, or tiny mission" autocomplete="off" required>
           <select id="priorityInput" aria-label="Priority level">
-            <option value="hard">Hard</option>
+            <option value="high">High</option>
             <option value="medium" selected>Medium</option>
-            <option value="Easy">Easy</option>
+            <option value="low">Low</option>
           </select>
           <button type="submit">Add task</button>
         </div>
@@ -76,9 +76,9 @@
         </div>
         <div class="priority-tabs" aria-label="Priority filter">
           <button class="priority-filter active" type="button" data-priority="all">All</button>
-          <button class="priority-filter" type="button" data-priority="hard">Hard</button>
+          <button class="priority-filter" type="button" data-priority="high">High</button>
           <button class="priority-filter" type="button" data-priority="medium">Medium</button>
-          <button class="priority-filter" type="button" data-priority="easy">Easy</button>
+          <button class="priority-filter" type="button" data-priority="low">Low</button>
         </div>
       </div>
 
