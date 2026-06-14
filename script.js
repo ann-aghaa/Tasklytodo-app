@@ -198,5 +198,8 @@ clearDoneButton.addEventListener("click", () => {
   tasks = tasks.filter((task) => !task.completed);
   render();
 });
-
+tasks = tasks.map(task => ({
+  ...task,
+  priority: task.priority || "medium"
+}));
 render();
