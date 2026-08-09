@@ -357,30 +357,28 @@ h1 {
   font-weight: 700;
 }
 
+
 .priority-pill {
-  min-width: 78px;
-  min-height: 32px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px 10px;
-  color: #ffffff;
-  font-size: 0.78rem;
-  font-weight: 900;
-  text-transform: uppercase;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
 }
 
-.priority-pill.high {
-  background: var(--high);
+.priority-pill.easy {
+    background: #dff5e1;
+    color: #2e7d32;
 }
 
 .priority-pill.medium {
-  background: var(--medium);
+    background: #fff3cd;
+    color: #856404;
 }
 
-.priority-pill.low {
-  background: var(--low);
+.priority-pill.hard {
+    background: #f8d7da;
+    color: #842029;
 }
 
 .delete-button {
